@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Processor</title>
+</head>
+<body>
+    <h1>Upload a Photo</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="photo" accept="image/*" required>
+        <input type="submit" value="Upload & Process">
+    </form>
+
+    {% if image %}
+        <h2>Processed Photo:</h2>
+        <img src="{{ url_for('static', filename=image) }}">
+    {% endif %}
+</body>
+</html>
